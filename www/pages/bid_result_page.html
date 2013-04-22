@@ -1,0 +1,14 @@
+<div id='header' ng-switch>
+  <input ng-tap="$navigate.go('/bids/list/{{activity_name}}')" type='button' value='返回'>
+  <a>竞价结果</a>
+  <input ng-tap="$navigate.go('/bids/count/{{activity_name}}/{{bid_name}}')" type='button' value='结果统计'>
+</div>
+<div id='wrapper'>
+  <div id='scroller'>
+    <ul id='bid_result_list'>
+      <li ng-repeat='bidding in biddings()'>
+        <a>{{bidding}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

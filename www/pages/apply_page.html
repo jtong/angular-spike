@@ -1,0 +1,25 @@
+<div id='header' ng-switch on='sign_up_status()'>
+  <input id='back_btn' ng-tap="$navigate.go('/', 'slide')" type='button' value='返回'>
+  <a>报名</a>
+  <input ng-switch-when='started' ng-tap='end_apply()' type='button' value='结束报名'>
+  <input ng-switch-default ng-tap='start_apply()' type='button' value='开始报名'>
+</div>
+<div id='wrapper'>
+  <div id='scroller'>
+    <ul id='player_list'>
+      <li ng-repeat='player in players'>
+        <a>{{player}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id='footer'>
+  <div class='row'>
+    <div class='small-6 columns'>
+      <a class='button' ng-tap="$navigate.go('/sign_ups/list/{{activity_name}}')">报名</a>
+    </div>
+    <div class='small-6 columns'>
+      <a class='button' ng-tap="$navigate.go('/bids/list/{{activity_name}}')">竞价</a>
+    </div>
+  </div>
+</div>

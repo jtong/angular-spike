@@ -1,0 +1,13 @@
+<div id='header' ng-switch>
+  <a>竞价</a>
+  <input ng-tap='end_bid()' type='button' value='结束竞价'>
+</div>
+<div id='wrapper'>
+  <div id='scroller'>
+    <ul id='bid_info_list'>
+      <li ng-repeat='bidding in biddings'>
+        <a>{{bidding}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

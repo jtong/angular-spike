@@ -1,0 +1,14 @@
+<div id='header'>
+  <input id='back_btn' ng-tap="$navigate.go('/', 'slide')" type='button' value='返回'>
+  <a href='#card_page'>创建活动</a>
+</div>
+<div id='wrapper'>
+  <form>
+    <fieldset>
+      <legend>Fieldset</legend>
+      <label>活动名称</label>
+      <input id='activity_name' placeholder='活动名称不能为空' type='text'>
+      <a class='button expand' ng-tap='create_activity()'>创建</a>
+    </fieldset>
+  </form>
+</div>

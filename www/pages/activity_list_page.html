@@ -1,0 +1,14 @@
+<div id='header'>
+  <a href='#card_page'>活动列表</a>
+  <input id='create_btn' ng-tap="$navigate.go('/activity/create', 'slide')" type='button' value='创建活动'>
+</div>
+<div id='wrapper'>
+  <div id='scroller'>
+    <ul class='side-nav' id='thelist'>
+      <li ng-repeat='activity in activities()' ng-tap="$navigate.go('/sign_ups/list/{{activity}}', 'slide', true)">
+        <a>{{activity}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id='footer'></div>
