@@ -1,0 +1,20 @@
+#header
+  %input#back_btn(type="button" ng-tap="$navigate.go('/', 'slide')" value="返回" )
+  %a(href="#card_page") 创建活动
+#wrapper
+  %form
+    %fieldset
+      %legend Fieldset
+      %label 活动名称
+      %input#activity_name(type="text" placeholder="活动名称不能为空")
+      %a.button.expand(ng-tap="create_activity()") 创建
+
+
+-##activity_create_page(data-role="page" )
+-#  #activity_create_header(data-role="header" )
+-#    %h1创建活动
+-#    %a(data-role="a" ng-tap="$navigate.back()" )返回
+-#  #activity_create_content(data-role="content" )
+-#    %h1活动名称
+-#    %input#activity_name(type="text" name="name" placeholder="不能为空" )
+-#    %input#activity_create_btn(type="button" value="创建" ng-tap="create_activity()" )

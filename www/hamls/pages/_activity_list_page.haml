@@ -1,0 +1,17 @@
+#header
+  %a(href="#card_page") 活动列表
+  %input#create_btn(type="button" ng-tap="$navigate.go('/activity/create', 'slide')" value="创建活动" )
+#wrapper
+  #scroller
+    %ul#thelist.side-nav
+      %li(ng-repeat="activity in activities()" ng-tap="$navigate.go('/sign_ups/list/{{activity}}', 'slide', true)")
+        %a {{activity}}
+#footer
+
+-#
+-##activity_list_page(data-role="page" )
+-#  #activity_list_header(data-role="header" )
+-#    %h1活动列表
+-#    %input#create_btn(type="button" onclick="go_to_activity_create_page()" data-icon="plus" class="ui-btn-right" value="创建活动" )
+-#  #activity_list_content
+-#    %ul#activity_list(data-role="listview" )

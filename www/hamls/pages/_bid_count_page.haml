@@ -1,0 +1,17 @@
+#header(ng-switch=true)
+  %input(type="button" ng-tap="$navigate.go('/bids/list/{{activity_name}}')" value="返回" )
+  %a 竞价结果
+  %input(type="button" ng-tap="$navigate.go('/bids/result/{{activity_name}}/{{bid_name}}')" value="结果列表" )
+#wrapper
+  #scroller
+    %ul#bid_count_list
+      %li(ng-repeat="num_of_price_item in num_of_price_items()")
+        %a {{num_of_price_item}}
+
+-##bid_count_page(data-role="page" )
+-#  #bid_count_page_header(data-role="header" )
+-#    %h1 竞价统计
+-#    %a(href="#bid_result_page" )返回
+-#    %a(class="ui-btn-right" onclick="go_to_bid_list_page()" )列表
+-#  #bid_count_page_content(data-role="content" )
+-#    %ul#bid_count_list(data-role="listview" )

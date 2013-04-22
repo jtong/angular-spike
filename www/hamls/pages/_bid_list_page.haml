@@ -1,0 +1,31 @@
+#header(ng-switch=true)
+  %input#back_btn(type="button" ng-tap="$navigate.go('/', 'slide')" value="返回" )
+  %a 竞价
+  %input(type="button" ng-tap="start_bid()" value="开始竞价" )
+#wrapper
+  #scroller
+    %ul#bid_list
+      %li(ng-repeat="bid in bids" ng-tap="$navigate.go('/bids/result/{{activity_name}}/{{bid}}')")
+        %a {{bid}}
+#footer
+  .row
+    .small-6.columns
+      %a.button(ng-tap="$navigate.go('/sign_ups/list/{{activity_name}}')") 报名
+    .small-6.columns
+      %a.button(ng-tap="$navigate.go('/bids/list/{{activity_name}}')") 竞价
+
+
+-##bid_list_page(data-role="page" )
+-#  #bid_list_page_header(data-role="header")
+-#    %h1竞价
+-#    %a(data-role="a" onclick="go_to_activity_list_page()" )返回
+-#    %input#bid_apply_start_btn(type="button" onclick="start_bid()" class="ui-btn-right" value="开始" )
+-#  #bid_list_page_content
+-#    %ul#bid_list(data-role="listview" )
+-#  #bid_list_page_footer(data-role="footer" data-id="fool" data-position="fixed" )
+-#    %div(data-role="navbar" )
+-#      %ul
+-#        %li
+-#          %a(href="#apply_page" )报名
+-#        %li
+-#          %a(href="#bid_list_page" class="ui-btn-active ui-state-persist" )竞价

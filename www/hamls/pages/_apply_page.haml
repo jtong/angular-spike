@@ -1,0 +1,43 @@
+#header(ng-switch=true on="sign_up_status()")
+  %input#back_btn(type="button" ng-tap="$navigate.go('/', 'slide')" value="返回" )
+  %a 报名
+  %input(ng-switch-when="started" type="button" ng-tap="end_apply()" value="结束报名" )
+  %input(ng-switch-default=true type="button" ng-tap="start_apply()" value="开始报名" )
+#wrapper
+  #scroller
+    %ul#player_list
+      %li(ng-repeat="player in players")
+        %a {{player}}
+#footer
+  .row
+    .small-6.columns
+      %a.button(ng-tap="$navigate.go('/sign_ups/list/{{activity_name}}')") 报名
+    .small-6.columns
+      %a.button(ng-tap="$navigate.go('/bids/list/{{activity_name}}')") 竞价
+
+-##apply_page(data-role="page" )
+-#  #apply_page_header(data-role="header" )
+-#    %h1报名
+-#    %a(data-role="a" onclick="go_to_activity_list_page()" )返回
+-#
+-#    %a#apply_start_btn(data-role="a" class="ui-btn-right" onclick="start_apply()" )开始
+-#    %a#apply_end_btn(data-role="a" class="ui-btn-right" onclick="end_apply()" )结束
+-#  #apply_page_content
+-#    %ul#applicant_list(data-role="listview" )
+-#  #apply_page_footer(data-role="footer" data-id="fool" data-position="fixed" )
+-#    %div(data-role="navbar" )
+-#      %ul
+-#        %li
+-#          %a(href="#apply_page" class="ui-btn-active ui-state-persist" )报名
+-#        %li
+-#          %a(href="#bid_list_page" )竞价
+-#
+-#  #apply_end_dialog
+-#    %a{:style=>"visibility:hidden;",:id=>"ask_apply_end",:href=>"#create_end_apply_dialog",'data-rel'=>"popup",'data-position-to'=>"window",'data-role'=>"button",'data-transition'=>"pop"}
+-#    %div{'data-role'=>"popup",:id=>"create_end_apply_dialog",'data-overlay-theme'=>"a",'data-theme'=>"c" ,:style=>"max-width:400px;",:class=>"ui-corner-all"}
+-#      %div{'data-role'=>"header",'data-theme'=>"a"}
+-#        %h1 结束？
+-#      %div{'data-role'=>"content",'data-theme'=>"d"}
+-#        %h3 确定要结束报名？
+-#        %a{:onclick=>"confirm_end_apply()",'data-role'=>"button",'data-inline'=>"true",'data-theme'=>"c",:class=>"end_Y"} 确定
+-#        %a{:onclick=>"continue_apply()",'data-role'=>"button",'data-inline'=>"true",'data-rel'=>"back",'data_theme'=>"c",:class=>"end_N"}取消

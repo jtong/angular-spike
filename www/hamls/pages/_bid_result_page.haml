@@ -1,0 +1,20 @@
+#header(ng-switch=true)
+  %input(type="button" ng-tap="$navigate.go('/bids/list/{{activity_name}}')" value="返回" )
+  %a 竞价结果
+  %input(type="button" ng-tap="$navigate.go('/bids/count/{{activity_name}}/{{bid_name}}')" value="结果统计" )
+#wrapper
+  #scroller
+    %ul#bid_result_list
+      %li(ng-repeat="bidding in biddings()")
+        %a {{bidding}}
+
+
+-##bid_result_page(data-role="page" )
+-#  #bid_result_page_header(data-role="header" )
+-#    %h1竞价结果
+-#    %a(onclick="go_to_bid_list_page()" )返回
+-#    %a(onclick="go_to_bid_count_page()" class="ui-btn-right" )统计
+-#  #bid_result_page_content(data-role="content" )
+-#    %ul#bid_result_list(data-role="listview" )
+-#  #bid_result_page_footer(data-role="footer" data-position="fixed" )
+-#    %h1#bid_winner 张三 13777778888 $5
